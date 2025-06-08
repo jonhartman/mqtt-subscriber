@@ -11,7 +11,7 @@ def on_connect(client, userData, flags, reasonCode, properties):
 
 # Executed code block per message received
 def on_message(client, userData, msg):
-    print(msg.payload.decode('utf-8'))
+    print(f'{msg.topic}     {msg.payload.decode("utf-8")}')
 
 # Initialize MQTT
 mqtt_client = mqtt.Client(client_id=MQTT_CLIENTID, callback_api_version=mqtt.CallbackAPIVersion.VERSION2)
